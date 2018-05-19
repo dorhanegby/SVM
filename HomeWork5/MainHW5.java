@@ -33,5 +33,17 @@ public class MainHW5 {
 	}
 	
 	public static void main(String[] args) throws Exception {
+
+		Instances trainingData = loadData("HomeWork5/Data/training.arff");
+		Instances testData = loadData("HomeWork5/Data/test.arff");
+
+		SVM svm = new SVM();
+
+		PolyKernel polyKernel = new PolyKernel();
+		polyKernel.setExponent(2);
+		svm.setKernel(polyKernel);
+		svm.buildClassifier(trainingData);
+		svm.calcConfusion(testData);
+
 	}
 }
