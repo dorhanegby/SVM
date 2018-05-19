@@ -41,13 +41,14 @@ public class SVM {
         }
         else {
             if(actual == 1.0) {
-                return Confusion.FN;
+                return Confusion.FP;
             }
             else {
-                return Confusion.TN;
+                return Confusion.TP;
             }
         }
     }
+
 
 	public void setKernel(Kernel kernel) {
 		this.m_smo.setKernel(kernel);
@@ -61,7 +62,7 @@ public class SVM {
 		return this.m_smo.getC();
 	}
 
-	private enum Confusion {
+	public enum Confusion {
 		TP,
 		FP,
 		TN,
