@@ -33,18 +33,18 @@ public class SVM {
 	private Confusion getConfusion(double predicted, double actual) {
         if(predicted == 1.0) {
             if(actual == 1.0) {
-                return Confusion.TN;
+                return Confusion.TP;
             }
             else {
-                return Confusion.FN;
+                return Confusion.FP;
             }
         }
         else {
             if(actual == 1.0) {
-                return Confusion.FP;
+                return Confusion.FN;
             }
             else {
-                return Confusion.TP;
+                return Confusion.TN;
             }
         }
     }
